@@ -1,0 +1,138 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+}
+
+#project-input{
+    margin: auto;
+    padding : 2em;
+    overflow-y: hidden;
+    background-color: burlywood;
+
+}
+
+#project-input form{
+    display:flex;
+    flex-direction: column;
+}
+
+#project-list{
+    margin-top: 1em;
+    padding: 1.5em;
+    background-color: beige;
+    max-width: 500px;
+    flex-grow: 2;
+}
+
+section[id^="project"]{
+    display: grid;
+    gap:10px 10px;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+section[id^="project"] > h3{
+    display: block;
+    width: 100%;
+    grid-column: 1 / 3;
+}
+
+article[class$="card"]{
+    background-color: azure;
+    display: flex;
+    gap:15px;
+    min-height: 80px;
+    max-height: 120px;
+}
+
+article[class$="card"]:hover{
+    cursor: pointer;
+}
+
+
+.tasks{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+
+.tasks > p{
+    flex-grow :2;
+}
+
+
+article[class$="card"] input[type="checkbox"]:checked ~ *{
+    text-decoration: line-through;
+}
+
+
+.button-choice{
+    display: flex;
+}
+
+.button-choice button{
+    flex: 1;
+}
+
+input[type="radio"]{
+    display: inline;
+}
+
+#radio-input{
+    display:flex;
+    justify-content: space-between;
+}
+
+#due-time {
+    overflow-y: auto;
+}
+
+.form-row:nth-of-type(3){
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-sub-row{
+    display: flex;
+    flex-direction: column;
+}
+
+#project-detail{
+    background-color: blanchedalmond;
+    margin-top: 1em;
+    padding: 1.5em;
+    min-width: 40%;
+    z-index: -2
+}
+
+#projects { 
+    display:flex;
+    justify-content: space-around;
+}
+
+#task-detail-title{
+    position: relative;
+  display: inline-block;
+}
+
+.top-task-part{
+    display:flex;
+    justify-content:space-between;
+}
+
+dialog[hidden]{
+    display:none
+}
+
+#warning-log{
+    display: inline-block;
+    min-height: 1.5rem;
+    background-color: red;
+    color: white;
+}
